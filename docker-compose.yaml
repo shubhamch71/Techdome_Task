@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./Techdome-frontend
+    ports:
+      - "80:80"
+  backend:
+    build: ./Techdome-backend
+    environment:
+      - PORT=8080
+      - CLOUD_NAME=deiy33cwz
+      - API_KEY=752869595822963
+      - API_SECRET=dQD_sDrqt3vl6t-VRU5uqRdayyI
+      - SECRET=shubham
+      - DB=mongodb://database:27017/techdome
+    ports:
+      - "8080:8080"
+  database:
+    image: mongo:latest
+    volumes: 
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+    driver: local
