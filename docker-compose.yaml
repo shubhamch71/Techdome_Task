@@ -1,12 +1,10 @@
-version: '3.8'
-
 services:
   frontend:
-    build: ./Techdome-frontend
+    image: shubhamchau/td-frontend:v1
     ports:
       - "80:80"
   backend:
-    build: ./Techdome-backend
+    image: shubhamchau/td-backend:v1
     environment:
       - PORT=8080
       - CLOUD_NAME=deiy33cwz
